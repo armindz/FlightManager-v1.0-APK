@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class DatabaseConnection {
 	
-	private static String url = "jdbc:mysql://10.0.0.5:3306/flightmanager";
+	private static String url = "jdbc:mysql://10.0.0.5:3306/flightmanager?" + "autoReconnect=true&useSSL=false";
 	private static String root = "user";
 	private static String password = "sifra";
 

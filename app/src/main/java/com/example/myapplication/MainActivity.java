@@ -3,24 +3,19 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.view.View.*;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
-import database.DatabaseConnection;
-import management.UserManagementSystem;
+import models.User;
+import java.util.ArrayList;
 
 import database.UserDatabase;
-import models.User;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn;
@@ -32,77 +27,59 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-
+        // "Log in" button on main page used to check if input data is valid
         btn = (Button) findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
 
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick (View v) {
-                UserDatabase ud = new UserDatabase();
 
-                String usernamedb = null;
+                // username input on mainActivity
+                TextView usernameView = findViewById(R.id.loginUsername);
+                String username = usernameView.getText().toString();
+                // password input on mainActivity
+                TextView passwordView = findViewById(R.id.loginPassword);
+                String password = passwordView.getText().toString();
+                // list of users from users database
 
-                try {
-                    Connection conn = DatabaseConnection.getConnection();
-                    if (conn == null) throw new AssertionError();
-                    Statement stmt = conn.createStatement();
-                    ResultSet rset = stmt.executeQuery("SELECT * FROM users where Username = 'admin'");
-                    while (rset.next()) {
-                        usernamedb =rset.getString("Username");
-                    }
 
-                    conn.close();
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                }
-                ((TextView) findViewById(R.id.loginInfo)).setText("Check if username or password is valid" + usernamedb);
+                            if (isLoginDataValid(username, password)) {   // if input data is valid perform action
+                                Toast.makeText(MainActivity.this, "Logged in", Toast.LENGTH_LONG).show();
+                                launchHomepage(v);
+                            } else {        // if input data is not valid notify user to check for typos
+                                ((TextView) findViewById(R.id.loginInfo)).setText("Check if username or password is valid");
+                            }
+                        }
+                     }
+               );}
 
+    public boolean isLoginDataValid(String username, String password) {
+        UserDatabase ud = new UserDatabase();
+        ArrayList<User> userFromList = ud.fetchDatabaseContent();
+
+        for (int i = 0; i < userFromList.size(); i++) {
+
+            String usernameDb = ud.fetchDatabaseContent().get(i).getUsername();
+            String passwordDb = ud.fetchDatabaseContent().get(i).getPassword();
+            if (usernameDb.equals(username) && passwordDb.equals(password)) {   // if input data is valid return true
+                return true;
             }
-
-
-        });
+        }
+        // if input data is not valid return false
+        return false;
     }
 
-    public void onClick(View view) {
+    @Override
+    public void onClick(View v) {
+        // NOTHING TO IMPLEMENT YET
+    }
 
-        TextView user = findViewById(R.id.loginUsername);
-        String username = user.getText().toString();
+    private void launchHomepage(View v) {
 
-        TextView pw = findViewById(R.id.loginPassword);
-        String password = pw.getText().toString();
-        ((TextView) findViewById(R.id.loginInfo)).setText("Reviewing if  " + username + " is valid ");
-        Log.d("usernameInformation" , username);
-        Log.d("pwInformation", password);
-
-
-        UserDatabase ud = new UserDatabase();
-        UserManagementSystem ums = new UserManagementSystem();
-
-      /*  String firstUser = ums.getUserList().get(0).getUsername();*/
+        Intent intent = new Intent(this, HomepageActivity.class);
+        startActivity(intent);
 
 
-     /*   String firstPass = ums.getUserList().get(0).getPassword();*/
-        ((TextView) findViewById(R.id.loginInfo)).setText("Check if username or password is valid");
-/*
-        String usernamedb = null;
-
-        try {
-            Connection conn = DatabaseConnection.getConnection();
-            Statement stmt = conn.createStatement();
-            ResultSet rset = stmt.executeQuery("SELECT * FROM users where Username = 'admin'");
-            while (rset.next()) {
-                usernamedb =rset.getString("Username");
-
-
-
-            }
-
-            conn.close();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        ((TextView) findViewById(R.id.loginInfo)).setText("Check if username or password is valid" + usernamedb);
-        */
     }
 }
