@@ -30,9 +30,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/createLayout"
         android:layout_width="335dp"
         android:layout_height="91dp"
+        android:animateLayoutChanges="true"
+        android:animationCache="true"
         android:background="@drawable/rounded_select_homepage"
+        android:fadingEdge="horizontal|vertical"
+        android:onClick="launchCreateActivity"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,15 +56,14 @@
             app:srcCompat="@android:drawable/ic_menu_add" />
 
         <TextView
-            android:id="@+id/homepageCreateTxt"
+            android:id="@+id/CreateAirlineTxt"
             android:layout_width="89dp"
             android:layout_height="40dp"
             android:fontFamily="@font/cabin"
+            android:password="false"
             android:text="Create"
             android:textIsSelectable="false"
             android:textSize="28sp"
-            app:flow_horizontalAlign="center"
-            app:flow_verticalAlign="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.396"
@@ -69,10 +73,54 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="412dp"
+        android:layout_height="49dp"
+        android:background="#A90B0B0B"
+        android:layerType="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="60dp"
+            android:layout_height="51dp"
+            android:background="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageButton2"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="56dp"
+            android:layout_height="51dp"
+            android:background="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageButton3"
+            app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="56dp"
+            android:layout_height="51dp"
+            android:background="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButton2"
+            app:srcCompat="@android:drawable/ic_menu_send" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="335dp"
         android:layout_height="91dp"
         android:background="@drawable/rounded_select_homepage"
+        android:onClick="launchListActivity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,15 +128,13 @@
         app:layout_constraintVertical_bias="0.441">
 
         <TextView
-            android:id="@+id/homepageListTxt"
+            android:id="@+id/CreateAirportTxt"
             android:layout_width="89dp"
             android:layout_height="40dp"
             android:fontFamily="@font/cabin"
             android:text="List"
             android:textIsSelectable="false"
             android:textSize="28sp"
-            app:flow_horizontalAlign="center"
-            app:flow_verticalAlign="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.415"
@@ -111,6 +157,7 @@
         android:layout_width="335dp"
         android:layout_height="91dp"
         android:background="@drawable/rounded_select_homepage"
+        android:onClick="launchBookActivity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,15 +165,13 @@
         app:layout_constraintVertical_bias="0.266">
 
         <TextView
-            android:id="@+id/homepageBookTxt"
+            android:id="@+id/CreateFlightTxt"
             android:layout_width="167dp"
             android:layout_height="40dp"
             android:fontFamily="@font/cabin"
             android:text="Book a flight"
             android:textIsSelectable="false"
             android:textSize="28sp"
-            app:flow_horizontalAlign="center"
-            app:flow_verticalAlign="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.627"

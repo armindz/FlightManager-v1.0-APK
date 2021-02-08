@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".HomepageActivity"></activity>
+        <activity android:name=".BookActivity"></activity>
+        <activity android:name=".ListActivity" />
+        <activity android:name=".CreateActivity" />
+        <activity android:name=".HomepageActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
