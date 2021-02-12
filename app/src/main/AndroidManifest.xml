@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".BookActivity"></activity>
+        <activity android:name=".CreateAirlineActivity"></activity>
+        <activity android:name=".ListAirlinesActivity" />
+        <activity android:name=".BookActivity" />
         <activity android:name=".ListActivity" />
         <activity android:name=".CreateActivity" />
         <activity android:name=".HomepageActivity" />

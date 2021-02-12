@@ -1,8 +1,11 @@
 package com.example.myapplication;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class ListActivity extends AppCompatActivity {
 
@@ -10,5 +13,13 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        // hide action bar on this activity
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+    }
+
+    public void  launchListAirlines (View v) {
+        Intent intent = new Intent(ListActivity.this, ListAirlinesActivity.class);
+        startActivity( intent);
     }
 }

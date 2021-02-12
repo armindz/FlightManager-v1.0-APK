@@ -31,42 +31,47 @@
                 app:srcCompat="@drawable/fms_transparent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="335dp"
-            android:layout_height="91dp"
-            android:animateLayoutChanges="true"
-            android:animationCache="true"
-            android:background="@drawable/rounded_select_homepage"
-            android:fadingEdge="horizontal|vertical"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-            app:layout_constraintEnd_toEndOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="335dp"
+        android:layout_height="91dp"
+        android:animateLayoutChanges="true"
+        android:animationCache="true"
+        android:background="@drawable/rounded_select_homepage"
+        android:fadingEdge="horizontal|vertical"
+        android:onClick="launchCreateAirlineActivity"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+        app:layout_constraintVertical_bias="0.67">
+
+        <ImageView
+            android:id="@+id/airlineIcon"
+            android:layout_width="72dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-            app:layout_constraintVertical_bias="0.67">
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/airline" />
 
-            <ImageView
-                android:id="@+id/airlineIcon"
-                android:layout_width="72dp"
-                android:layout_height="55dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/airline" />
-
-            <TextView
-                android:id="@+id/CreateAirlineTxt"
-                android:layout_width="168dp"
-                android:layout_height="49dp"
-                android:fontFamily="@font/cabin"
-                android:text="Create airline"
-                android:textIsSelectable="false"
-                android:textSize="28sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/homepageCreateBtn"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/CreateAirlineTxt"
+            android:layout_width="168dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/cabin"
+            android:shadowColor="#4C4C4C"
+            android:text="Create airline"
+            android:textColor="#D1D0D0"
+            android:textColorHighlight="#393939"
+            android:textColorHint="#515151"
+            android:textIsSelectable="false"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/homepageCreateBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
@@ -84,7 +89,9 @@
                 android:layout_width="165dp"
                 android:layout_height="48dp"
                 android:fontFamily="@font/cabin"
+                android:shadowColor="#4E4949"
                 android:text="Create airport"
+                android:textColor="#D1D0D0"
                 android:textIsSelectable="false"
                 android:textSize="28sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -162,7 +169,9 @@
                 android:layout_width="171dp"
                 android:layout_height="43dp"
                 android:fontFamily="@font/cabin"
+                android:shadowColor="#716E6E"
                 android:text="Create flight"
+                android:textColor="#D1D0D0"
                 android:textIsSelectable="false"
                 android:textSize="28sp"
                 app:layout_constraintBottom_toBottomOf="parent"

@@ -34,7 +34,7 @@ public class AirlineManagementSystem {
 		}
 	}
 
-	private boolean isAirlineDataUnique(String airlineCodename) {
+	public boolean isAirlineDataUnique(String airlineCodename) {
 
 		ArrayList <Airline> listOfAirlines = fetchDatabaseContentToList();
 		
@@ -74,7 +74,7 @@ public class AirlineManagementSystem {
 
 	}
 
-	private boolean isAirlineCodenameValid(String airlineCodename) {
+	public boolean isAirlineCodenameValid(String airlineCodename) {
 
 		if (airlineCodename.length() < AIRLINE_CODENAME_MAX_LENGTH
 				&& airlineCodename.chars().allMatch(Character::isLetter)) {
