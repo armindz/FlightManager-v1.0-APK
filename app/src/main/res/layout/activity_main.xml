@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3A3A3A"
+    android:background="@drawable/bgrblur"
     android:onClick="onClick"
     android:scrollbarAlwaysDrawHorizontalTrack="true"
     android:scrollbarStyle="outsideOverlay"
     android:soundEffectsEnabled="true"
     android:splitMotionEvents="true"
-    
-    tools:context=".MainActivity" >
+
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout2"

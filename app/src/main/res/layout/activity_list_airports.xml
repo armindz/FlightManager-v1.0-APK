@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgrblur"
-    tools:context=".ListAirlinesActivity">
-
+    tools:context=".ListAirportsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
@@ -79,7 +78,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <GridView
-        android:id="@+id/airlinesList"
+        android:id="@+id/airportsList"
         android:layout_width="414dp"
         android:layout_height="446dp"
         android:layout_marginBottom="116dp"

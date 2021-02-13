@@ -3,7 +3,9 @@ package com.example.myapplication;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListView;
@@ -30,5 +32,19 @@ public class ListAirlinesActivity extends AppCompatActivity {
         airlinesList.setAdapter(new ArrayAdapter<Airline>(this,R.layout.cell, listOfAirlines));
 
 
+    }
+
+    public void launchCreateActivity (View v) {
+        Intent intent = new Intent (ListAirlinesActivity.this, CreateActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchListActivity (View v) {
+        Intent intent = new Intent (ListAirlinesActivity.this, ListActivity.class);
+        startActivity(intent);
+    }
+    public void launchBookActivity (View v) {
+        Intent intent = new Intent (ListAirlinesActivity.this, BookActivity.class);
+        startActivity(intent);
     }
 }

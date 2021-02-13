@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import management.AirlineManagementSystem;
-import models.Airline;
 
 public class CreateAirlineActivity extends AppCompatActivity {
     Button btn;
@@ -23,19 +22,19 @@ public class CreateAirlineActivity extends AppCompatActivity {
         actionBar.hide();
 
         // "Create airline" button on CreateAirlineActivity used to create airline if input data is valid
-        btn = (Button) findViewById(R.id.createAirlineBtn);
+        btn = (Button) findViewById(R.id.createAirportBtn);
         btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // airline codename input on CreateAirlineActivity
-                TextView codename = (TextView) findViewById(R.id.airlineCodenameTxt);
+                TextView codename = (TextView) findViewById(R.id.airportCodenameTxt);
                 String airlineCodename = codename.getText().toString();
                 // airline callsign input on CreateAirlineActivity
-                TextView callsign = (TextView) findViewById(R.id.airlineCallsignTxt);
+                TextView callsign = (TextView) findViewById(R.id.airportFullnameTxt);
                 String airlineCallsign = callsign.getText().toString();
                 // airline country input  on CreateAirlineActivity
-                TextView country = (TextView) findViewById(R.id.airlineCountryTxt);
+                TextView country = (TextView) findViewById(R.id.airportTypeTxt);
                 String airlineCountry = country.getText().toString();
 
                 AirlineManagementSystem airlinems = new AirlineManagementSystem();
@@ -48,7 +47,7 @@ public class CreateAirlineActivity extends AppCompatActivity {
 
                 }
                 else {
-                    ((TextView) findViewById(R.id.createAirlineNotification)).setText("Airline not unique or codename not valid!");
+                    ((TextView) findViewById(R.id.createAirportNotification)).setText("Airline not unique or codename not valid!");
                 }
             }
         });
@@ -57,5 +56,18 @@ public class CreateAirlineActivity extends AppCompatActivity {
     public void  launchListAirlines (View v) {
         Intent intent = new Intent(CreateAirlineActivity.this, ListAirlinesActivity.class);
         startActivity( intent);
+    }
+    public void launchCreateActivity (View v) {
+        Intent intent = new Intent (CreateAirlineActivity.this, CreateActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchListActivity (View v) {
+        Intent intent = new Intent (CreateAirlineActivity.this, ListActivity.class);
+        startActivity(intent);
+    }
+    public void launchBookActivity (View v) {
+        Intent intent = new Intent (CreateAirlineActivity.this, BookActivity.class);
+        startActivity(intent);
     }
 }

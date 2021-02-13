@@ -59,7 +59,7 @@ public class AirportManagementSystem {
 		return null;
 		
 	}
-	private boolean isAirportDataUnique(String airportCodename) {
+	public boolean isAirportDataUnique(String airportCodename) {
 		
 		ArrayList <Airport> listOfAirports = fetchDatabaseContentToList();
 		
@@ -74,7 +74,7 @@ public class AirportManagementSystem {
 		return true;
 	}
 
-	private boolean isAirportCodenameValid(String airportCodename) {
+	public boolean isAirportCodenameValid(String airportCodename) {
 
 		if (airportCodename.length() == AIRPORT_CODENAME_LENGTH
 				&& airportCodename.chars().allMatch(Character::isLetter)) {

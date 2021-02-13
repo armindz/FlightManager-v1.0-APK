@@ -18,8 +18,22 @@ public class ListActivity extends AppCompatActivity {
         actionBar.hide();
     }
 
-    public void  launchListAirlines (View v) {
+    public void  launchListAirlines(View v) {
         Intent intent = new Intent(ListActivity.this, ListAirlinesActivity.class);
         startActivity( intent);
+    }
+
+    public void launchListAirports(View v) {
+        Intent intent = new Intent (ListActivity.this, ListAirportsActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchCreateActivity (View v) {
+        Intent intent = new Intent (ListActivity.this, CreateActivity.class);
+        startActivity(intent);
+    }
+    public void launchBookActivity (View v) {
+        Intent intent = new Intent (ListActivity.this, BookActivity.class);
+        startActivity(intent);
     }
 }

@@ -4,32 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homepagebgr"
+    android:background="@drawable/bgrblur"
     tools:context=".CreateActivity">
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="414dp"
+        android:layout_height="67dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout3"
-            android:layout_width="414dp"
-            android:layout_height="67dp"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="false"
             android:background="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="false"
-                android:background="#FFFFFF"
-                android:fadingEdge="horizontal"
-                app:srcCompat="@drawable/fms_transparent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:fadingEdge="horizontal"
+            app:srcCompat="@drawable/fms_transparent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="335dp"
@@ -73,42 +72,43 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
-            android:layout_width="335dp"
-            android:layout_height="91dp"
-            android:background="@drawable/rounded_select_homepage"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="335dp"
+        android:layout_height="91dp"
+        android:background="@drawable/rounded_select_homepage"
+        android:onClick="launchCreateAirportActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+        app:layout_constraintVertical_bias="0.441">
+
+        <TextView
+            android:id="@+id/CreateAirportTxt"
+            android:layout_width="165dp"
+            android:layout_height="48dp"
+            android:fontFamily="@font/cabin"
+            android:shadowColor="#4E4949"
+            android:text="Create airport"
+            android:textColor="#D1D0D0"
+            android:textIsSelectable="false"
+            android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.728"
+            app:layout_constraintStart_toEndOf="@+id/imageButton9"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/airportIcon"
+            android:layout_width="86dp"
+            android:layout_height="57dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-            app:layout_constraintVertical_bias="0.441">
-
-            <TextView
-                android:id="@+id/CreateAirportTxt"
-                android:layout_width="165dp"
-                android:layout_height="48dp"
-                android:fontFamily="@font/cabin"
-                android:shadowColor="#4E4949"
-                android:text="Create airport"
-                android:textColor="#D1D0D0"
-                android:textIsSelectable="false"
-                android:textSize="28sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.728"
-                app:layout_constraintStart_toEndOf="@+id/imageButton9"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/airportIcon"
-                android:layout_width="86dp"
-                android:layout_height="57dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/airport" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/airport" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
@@ -136,6 +136,7 @@
             android:layout_width="56dp"
             android:layout_height="51dp"
             android:background="#00FFFFFF"
+            android:onClick="launchListActivity"
             app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.52"
@@ -148,46 +149,48 @@
             android:layout_width="56dp"
             android:layout_height="51dp"
             android:background="#00FFFFFF"
+            android:onClick="launchBookActivity"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageButton2"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_menu_send" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="335dp"
-            android:layout_height="91dp"
-            android:background="@drawable/rounded_select_homepage"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="335dp"
+        android:layout_height="91dp"
+        android:background="@drawable/rounded_select_homepage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintVertical_bias="0.266">
+
+        <TextView
+            android:id="@+id/CreateFlightTxt"
+            android:layout_width="171dp"
+            android:layout_height="43dp"
+            android:fontFamily="@font/cabin"
+            android:shadowColor="#716E6E"
+            android:text="Create flight"
+            android:textColor="#D1D0D0"
+            android:textIsSelectable="false"
+            android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imageButton10"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/flightIcon"
+            android:layout_width="84dp"
+            android:layout_height="67dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-            app:layout_constraintVertical_bias="0.266">
-
-            <TextView
-                android:id="@+id/CreateFlightTxt"
-                android:layout_width="171dp"
-                android:layout_height="43dp"
-                android:fontFamily="@font/cabin"
-                android:shadowColor="#716E6E"
-                android:text="Create flight"
-                android:textColor="#D1D0D0"
-                android:textIsSelectable="false"
-                android:textSize="28sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/imageButton10"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/flightIcon"
-                android:layout_width="84dp"
-                android:layout_height="67dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/flight" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/flight" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
