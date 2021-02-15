@@ -154,6 +154,7 @@
         android:layout_width="335dp"
         android:layout_height="91dp"
         android:background="@drawable/rounded_select_homepage"
+        android:onClick="launchListFlights"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

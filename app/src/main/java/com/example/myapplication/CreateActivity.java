@@ -42,5 +42,9 @@ public class CreateActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void launchCreateFlightActivity(View v) {
+        Intent intent = new Intent (CreateActivity.this, CreateFlightActivity.class);
+        startActivity(intent);
+    }
 
 }

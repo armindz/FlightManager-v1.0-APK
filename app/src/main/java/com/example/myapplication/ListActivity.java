@@ -36,4 +36,8 @@ public class ListActivity extends AppCompatActivity {
         Intent intent = new Intent (ListActivity.this, BookActivity.class);
         startActivity(intent);
     }
+    public void launchListFlights (View v) {
+        Intent intent = new Intent(ListActivity.this, ListFlightsActivity.class);
+        startActivity(intent);
+    }
 }
